@@ -4,4 +4,7 @@ Rails.application.routes.draw do
               path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'}
 
   root 'pages#home'
+
+  resources :games, only: [:create, :update, :show]
+  get '/new_game' => 'games#new'
 end

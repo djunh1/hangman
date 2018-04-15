@@ -1,0 +1,8 @@
+<h3>My current game</h3>
+
+
+
+<%= form_for @game do |f| %>
+  <%= f.text_field :letter, :maxlength => 1, required: true %>
+  <%= f.submit "Check Letter" %>
+<% end %>

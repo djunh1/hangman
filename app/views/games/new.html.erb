@@ -1,0 +1,13 @@
+<h2>New Hangman Game</h2>
+
+<h5>The Rules</h5>
+
+<ul>
+  <li>You have 10 chances to guess the correct word.</li>
+  <li>You must finish the game your started before moving on to a new one.</li>
+  <li>We keep score, so make guesses wisely! </li>
+</ul>
+
+<%= form_for @game do |f| %>
+ <%= f.submit "Lets go!" %>
+<% end %>

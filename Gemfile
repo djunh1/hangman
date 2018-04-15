@@ -55,3 +55,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'materialize-sass'
+gem 'random-word-generator', '~> 0.0.1'
+gem 'toastr-rails'
+gem 'react-rails'
