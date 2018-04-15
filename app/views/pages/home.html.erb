@@ -1,0 +1,8 @@
+<h1>Welcome to hangman</h1>
+
+<% if (!user_signed_in?) %>
+  <p>Please sign up or login to start a game!</p>
+<% else %>
+  <p>Current wins <%= current_user.wins %></p>
+  <p>Current losses <%= current_user.losses %></p>
+<% end %>
