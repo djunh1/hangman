@@ -3,7 +3,7 @@
 sudo apt-get install rubygems -y
 sudo gem install gemcutter # ruby gem hosting service
 
-sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev -y
 sudo apt-get install sqlite3 -y
 sudo apt-get install sqlite3 libsqlite3-dev -y
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
