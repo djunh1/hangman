@@ -16,3 +16,111 @@
 
 @import "materialize";
 @import "toastr";
+
+.hangmanContainer {
+  display: grid;
+  grid-template-columns: [full-start] 1rem [col-start] 800px [col-end] 1rem [full-end];
+  justify-items: center;
+  grid-row-gap: 2rem;
+
+  &__title {
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    grid-column:col-start/col-end;
+    grid-row: 1/2;
+  }
+
+  &__hangman {
+    grid-column:col-start/col-end;
+    height: 300px;
+    width: 300px;
+    grid-row: 2/3;
+    background-image: asset-url("hangman.png");
+    background-size: cover;
+    background-position: center;
+
+
+  }
+
+  &__letters {
+    grid-column:col-start/col-end;
+    grid-row: 3/4;
+  }
+
+  &__submit {
+    grid-column:col-start/col-end;
+    grid-row: 4/5;
+  }
+
+}
+
+.hangman {
+  border: 1px solid #000;
+  display: grid;
+
+  grid-template-rows: 20% 19% 16% 20% 15% 10%;
+  grid-template-columns: [col-1-start ].6fr [col-1-end col-2-start] .18fr [col-2-end col-3-start].22fr [col-3-end];
+
+  &__one{
+    background-color: #fff;
+    grid-column: col-1-start/col-1-end;
+    grid-row: 6/7;
+  }
+
+  &__two{
+    background-color: #fff;
+    grid-column: col-1-start/col-1-end;
+    grid-row: 2/6;
+  }
+  &__three{
+    background-color: #fff;
+    grid-column: col-1-start/col-1-end;
+    grid-row: 1/2;
+
+  }
+  &__four{
+    background-color: #fff;
+    grid-column: col-2-start/col-2-end;
+    grid-row: 1/2;
+
+  }
+  &__five{
+    background-color: #fff;
+    grid-column: col-3-start/col-3-end;
+    grid-row: 1/2;
+
+  }
+  &__six{
+    background-color: #fff;
+    grid-column: col-2-start/col-3-end;
+    grid-row: 2/3;
+
+
+  }
+  &__seven{
+    background-color: #fff;
+    grid-column: col-2-start/col-2-end;
+    grid-row: 3/4;
+
+  }
+  &__eight{
+    background-color: #fff;
+    grid-column: col-3-start/col-3-end;
+    grid-row: 3/4;
+
+  }
+  &__nine{
+    background-color: #fff;
+    grid-column: col-2-start/col-2-end;
+    grid-row: 4/5;
+
+  }
+  &__ten{
+    background-color: #fff;
+    grid-column: col-3-start/col-3-end;
+    grid-row: 4/5;
+
+  }
+
+}

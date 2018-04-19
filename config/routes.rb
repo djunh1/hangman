@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  resources :games, only: [:create, :update, :show]
+  resources :games, only: [:create, :update, :show] do
+    resources :letters, only: [:create]
+  end
+
   get '/new_game' => 'games#new'
 end

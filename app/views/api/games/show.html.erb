@@ -1,0 +1,17 @@
+<div class="row">
+  <h3>My current game</h3>
+  <div class="col m6">
+    <%= javascript_pack_tag 'hello_react' %>
+  </div>
+  <div class="col m6">
+
+</div>
+
+<div class="row">
+  <div class="col m12">
+    <%= form_for @game do |f| %>
+      <%= f.text_field :letter, :maxlength => 1, required: true %>
+      <%= f.submit "Check Letter" %>
+    <% end %>
+  </div>
+</div>

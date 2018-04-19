@@ -1,8 +1,118 @@
-<h3>My current game</h3>
+<div class="hangmanContainer">
+  <h3 class="hangmanContainer__title">My current game</h3>
+  <div class="hangmanContainer__hangman hangman">
+    <% if @guessed == 0 %>
+      <div class="hangman__one"></div>
+      <div class="hangman__two"></div>
+      <div class="hangman__three"></div>
+      <div class="hangman__four"></div>
+      <div class="hangman__five"></div>
+      <div class="hangman__six"></div>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+    <% if @guessed == 1 %>
+      <div class="hangman__two"></div>
+      <div class="hangman__three"></div>
+      <div class="hangman__four"></div>
+      <div class="hangman__five"></div>
+      <div class="hangman__six"></div>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
 
+    <% if @guessed == 2 %>
+      <div class="hangman__three"></div>
+      <div class="hangman__four"></div>
+      <div class="hangman__five"></div>
+      <div class="hangman__six"></div>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
 
+    <% if @guessed == 3 %>
 
-<%= form_for @game do |f| %>
-  <%= f.text_field :letter, :maxlength => 1, required: true %>
-  <%= f.submit "Check Letter" %>
+      <div class="hangman__four"></div>
+      <div class="hangman__five"></div>
+      <div class="hangman__six"></div>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 4 %>
+      <div class="hangman__five"></div>
+      <div class="hangman__six"></div>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 5 %>
+      <div class="hangman__six"></div>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 6 %>
+      <div class="hangman__seven"></div>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 7 %>
+      <div class="hangman__eight"></div>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 8 %>
+      <div class="hangman__nine"></div>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 9 %>
+      <div class="hangman__ten"></div>
+    <% end %>
+
+    <% if @guessed == 10 %>
+    <% end %>
+
+  </div>
+ <% if !@game.nil? %>
+  <div class="hangmanContainer__letters">
+    <% @word.each_with_index do |letter, idx| %>
+      <% if @index.include?(idx) %>
+        <span><%= letter %></span>
+      <% else %>
+        <span>____</span>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="hangmanContainer__submit">
+    <%= form_for([@game, @game.letters.new], html: {class: "#"}) do |f| %>
+      <%= f.text_field :letter, :maxlength => 1, required: true %>
+      <%= f.submit "Check Letter" %>
+    <% end %>
+  </div>
+
+<% else %>
+  <div class="hangmanContainer__letters">
+    <p>The game is over.  But you can restart one!</p>
+    <p>The correct word was <%= @corectWord %></p>
+    <%= link_to "Start new Game", new_game_path, class: 'btn' %>
+  </div>
+
 <% end %>
+</div>
