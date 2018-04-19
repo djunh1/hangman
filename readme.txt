@@ -24,7 +24,19 @@ Step 3:
 Run $ bin/shoobx.sh
 
 
-Step 4: update the ruby rubygems
+Step 4: prepare your rvm
+
+yarn install
+
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+rvm install 2.3.0
+rvm --default use 2.3.0
+sudo apt install ruby-bundler -y
+sudo apt install ruby-railties -y
+
+
+Step 5: update the ruby rubygems
 
 gem install nio4r -v '2.3.0'
 gem install bycrypt -v '3.1.11'
