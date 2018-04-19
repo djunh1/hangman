@@ -2,11 +2,10 @@
 
 sudo apt-get install rubygems -y
 sudo gem install gemcutter # ruby gem hosting service
-sudo gem tumble
+
 
 sudo apt-get install sqlite3 -y
 sudo apt-get install sqlite3 libsqlite3-dev -y
-sudo gem install sqlite3-ruby
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 

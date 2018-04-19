@@ -44,6 +44,8 @@ sudo apt install ruby-railties -y
 
 Step 5: update the ruby rubygems
 
+gem tumble
+gem install sqlite3-ruby
 gem install nio4r -v '2.3.0'
 gem install bycrypt -v '3.1.11'
 gem install bindex -v '0.5.0'
