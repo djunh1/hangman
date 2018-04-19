@@ -1,19 +1,19 @@
 #!/bin/bash
 
-sudo apt-get install rubygems
+sudo apt-get install rubygems -y
 sudo gem install gemcutter # ruby gem hosting service
 sudo gem tumble
 
-sudo apt-get install sqlite3
-sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install sqlite3 -y
+sudo apt-get install sqlite3 libsqlite3-dev -y
 sudo gem install sqlite3-ruby
-sudo apt-get install nodejs
-sudo apt-get upgrade nodejs
+sudo apt-get install nodejs -y
+sudo apt-get upgrade nodejs -y
 #install Yarn
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
+sudo apt-get update && sudo apt-get install yarn -y
 yarn install
 
 #RVM
@@ -22,8 +22,8 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 rvm install 2.3.0
 rvm --default use 2.3.0
-sudo apt install ruby-bundler
-sudo apt install ruby-railties
+sudo apt install ruby-bundler -y
+sudo apt install ruby-railties -y
 gem install nio4r -v '2.3.0'
 gem install bycrypt -v '3.1.11'
 gem install bindex -v '0.5.0'
