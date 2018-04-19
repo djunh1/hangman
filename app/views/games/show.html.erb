@@ -1,5 +1,6 @@
 <div class="hangmanContainer">
   <h3 class="hangmanContainer__title">My current game</h3>
+
   <div class="hangmanContainer__hangman hangman">
     <% if @guessed == 0 %>
       <div class="hangman__one"></div>
@@ -101,17 +102,17 @@
     <% end %>
   </div>
   <div class="hangmanContainer__submit">
-    <%= form_for([@game, @game.letters.new], html: {class: "#"}) do |f| %>
+    <%= form_for([@game, @game.letters.new], html: {class: "form--guess"}) do |f| %>
       <%= f.text_field :letter, :maxlength => 1, required: true %>
-      <%= f.submit "Check Letter" %>
+      <%= f.submit "Check Letter", class: 'button' %>
     <% end %>
   </div>
 
 <% else %>
-  <div class="hangmanContainer__letters">
+  <div class="hangmanContainer__letters2">
     <p>The game is over.  But you can restart one!</p>
     <p>The correct word was <%= @corectWord %></p>
-    <%= link_to "Start new Game", new_game_path, class: 'btn' %>
+    <%= link_to "Start new Game", new_game_path, class: 'button' %>
   </div>
 
 <% end %>

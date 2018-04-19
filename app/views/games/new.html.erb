@@ -1,13 +1,24 @@
-<h2>New Hangman Game</h2>
+<div class="containerGame">
+  <div class="containerGame__header">
+    <h2>New Hangman Game</h2>
+  </div>
+  <div class="containerGame__header">
+    <h5>The Rules</h5>
+  </div>
+   <div class="containerGame__list">
+     <ul>
+       <li>You have 10 chances to guess the correct word.</li>
+       <li>You must finish the game your started before moving on to a new one.</li>
+       <li>We keep score, so make guesses wisely! </li>
+     </ul>
+   </div>
 
-<h5>The Rules</h5>
+   <div class="containerGame__form">
+     <%= form_for @game do |f| %>
+      <%= f.submit "Lets go!", class: 'button' %>
+     <% end %>
+   </div>
 
-<ul>
-  <li>You have 10 chances to guess the correct word.</li>
-  <li>You must finish the game your started before moving on to a new one.</li>
-  <li>We keep score, so make guesses wisely! </li>
-</ul>
 
-<%= form_for @game do |f| %>
- <%= f.submit "Lets go!" %>
-<% end %>
+
+</div>
