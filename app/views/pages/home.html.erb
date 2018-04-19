@@ -1,18 +1,22 @@
-
-<h1>Welcome to hangman</h1>
-
-<% if (!user_signed_in?) %>
-  <p>Please sign up or login to start a game!</p>
-<% else %>
-  <p>Current wins <%= current_user.wins %></p>
-  <p>Current losses <%= current_user.losses %></p>
-
-  <% if current_user.currentgame.nil? || @current_game.blank?  %>
-    <%= link_to "New Game", new_game_path, class: 'btn' %>
-
-  <% else %>
-    <%= link_to "Continue Game", game_path(@current_game),  class: 'btn'  %>
-
-
-  <% end %>
-<% end %>
+<div class="landingContainer">
+<div class="landingContainer__header">
+    <h1 class="landingContainer__title">Welcome to hangman</h1>
+    <% if (user_signed_in?) %>
+    <div class="landingContainer__score">
+      <p>Wins : <%= current_user.wins %></p>
+      <p>Losses : <%= current_user.losses %></p>
+    </div>
+    <div class="landingContainer__btn">
+      <% if current_user.currentgame.nil? || @current_game.blank?  %>
+        <%= link_to "New Game", new_game_path, class: 'button ' %>
+      <% else %>
+        <%= link_to "Continue Game", game_path(@current_game),  class: 'button '  %>
+      <% end <%>
+    </div>
+    <% else %>
+    <div class="landingContainer__score">
+      <p >Please sign up or login to start a game!</p>
+    </div>
+    <% end %>
+  </div>
+</div>

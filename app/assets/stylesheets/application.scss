@@ -17,6 +17,146 @@
 @import "materialize";
 @import "toastr";
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding:0;
+  box-sizing: inherit;
+}
+
+// 1 REM UNIT
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  color:#000;
+}
+
+
+
+$color-primary :rgb(35, 28, 172);
+$color-secondary : rgb(23, 46, 166);
+$color-backup: rgba(25, 111, 235, 0.46);
+
+$button-color:rgba(3, 135, 48, 0.93);
+$button-color-light: rgb(103, 196, 98);
+
+.button {
+  &:link,
+  &:visited {
+    background-color: $button-color;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+
+  }
+
+  background-color: $button-color;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  font-size: 1.78rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all .2s;
+
+
+    &:hover, &:link:hover, &:visited:hover {
+        background-color: $button-color-light;
+        color:#fff;
+    }
+
+  &--primary {
+    &:link,
+    &:visited,
+    input{
+      background-color: $color-backup;
+      color:$color-primary;
+      border-radius: 0px;
+    }
+  }
+
+  &--update {
+
+    background-color: #fff;
+    border:1px solid #000;
+    color:$color-primary;
+    border-radius: 50px;
+
+    &:link,
+    &:visited,
+      {
+        background-color: #fff;
+        border:1px solid #000;
+        color:$color-primary;
+        border-radius: 50px;
+    }
+
+
+  }
+
+
+
+
+}
+
+.landingContainer {
+
+  &__btn {
+    width:300px;
+  }
+
+  &__title {
+    font-size:30px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    color:#fff;
+
+  }
+
+  &__score {
+    padding: 3rem;
+    font-size: 20px;
+
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__header {
+    height: 85vh;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.7),
+      rgba($color-secondary, 0.7)) ,
+    asset-url("intro.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    padding:6rem;
+
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 74vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 74vh, 0 100%);
+      height: 85vh;
+    }
+  }
+}
+
+
 .hangmanContainer {
   display: grid;
   grid-template-columns: [full-start] 1rem [col-start] 800px [col-end] 1rem [full-end];
@@ -123,4 +263,132 @@
 
   }
 
+}
+
+.containerLogin{
+  display: grid;
+  grid-template-columns: [full-start] 35% [center-start] 1fr [center-end] 35% [full-end];
+  grid-template-rows:.2fr .7fr .1fr;
+  grid-row-gap: 3rem;
+  font-size:1.6rem;
+
+
+
+  &__header{
+    grid-row: 1/2;
+    grid-column: center-start/center-end;
+    justify-self: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+  &__header-2{
+    grid-row: 1/2;
+    grid-column: center-start/center-end;
+    justify-self: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  &__form {
+    grid-row:2/3;
+    grid-column: center-start/center-end;
+  }
+
+  &__sign-up {
+    grid-row:3/4;
+    grid-column: center-start/center-end;
+  }
+
+  &__link {
+    grid-column: center-start/center-end;
+  }
+
+}
+
+.formCust {
+  height: 5.5rem !important;
+  border: 1px solid #d0d0d0 !important;
+  border-radius: 5px !important;
+  padding: .65rem 1rem .65rem 2rem !important;
+  font-size: 1.7rem !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  //width:95% !important;
+  background-color: #fff !important;
+  color: $color-primary !important;
+  width: 100%;
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;;
+  box-sizing: border-box !important;;
+
+  &:focus {
+    border: 1px solid $color-primary !important;
+    box-shadow: 0 0 0 0;
+  }
+  &::placeholder {
+    color: $color-primary !important;
+  }
+
+  &--textbox {
+    height: 15rem !important;
+    resize: none;
+    padding: .65rem 1rem .65rem 2rem !important;
+    border-radius: 5px !important;
+    border: 1px solid $color-primary;
+
+  }
+
+}
+
+// For input items with icon
+.form-group-icon {
+ position: relative;
+ padding:2rem 0;
+
+  &__input {
+
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    top:4rem;
+    right:2rem;
+  }
+}
+
+
+//Use flexbox here.  Probably need to refactor to be dry
+.login-form {
+   display: flex;
+   flex-direction: column;
+
+
+   &__remember-me {
+     display: flex;
+     flex-direction: row;
+     align-items: stretch;
+     justify-content: center;
+
+     padding:2rem 0;
+   }
+
+   &__checkbox {
+    flex-basis: 50%;
+
+
+
+   }
+
+   &__forget-password {
+     flex-basis: 50%;
+     justify-content: flex-end;
+     display: flex;
+
+     &link {
+       justify-content: flex-end;
+     }
+
+   }
 }
