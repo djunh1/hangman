@@ -8,7 +8,6 @@ sudo apt-get install sqlite3 -y
 sudo apt-get install sqlite3 libsqlite3-dev -y
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
-yarn install
 
 #install Yarn
 
